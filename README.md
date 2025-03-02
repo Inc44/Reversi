@@ -1,3 +1,11 @@
+<div align="center">
+
+![](gui.png)
+
+![](cli.png)
+
+</div>
+
 ## Usage
 ```powershell
 git clone https://github.com/Inc44/Reversi.git
