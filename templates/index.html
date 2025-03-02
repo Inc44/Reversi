@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Reversi Game</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	</head>
+	<body>
+		<div class="container">
+			<h1>Reversi Game</h1>
+			<div class="controls">
+				<div class="game-options">
+					<label>Board Size: <select id="board-size">
+							<option value="4">4x4</option>
+							<option value="5">5x5</option>
+							<option value="6">6x6</option>
+							<option value="7">7x7</option>
+							<option value="8" selected>8x8</option>
+							<option value="9">9x9</option>
+							<option value="10">10x10</option>
+							<option value="11">11x11</option>
+							<option value="12">12x12</option>
+							<option value="13">13x13</option>
+							<option value="14">14x14</option>
+							<option value="15">15x15</option>
+							<option value="16">16x16</option>
+						</select>
+					</label>
+					<label>Black Player: <select id="black-player">
+							<option value="Human" selected>Human</option>
+							<option value="AI">AI</option>
+						</select>
+					</label>
+					<label>White Player: <select id="white-player">
+							<option value="Human">Human</option>
+							<option value="AI" selected>AI</option>
+						</select>
+					</label>
+					<button id="new-game-btn">New Game</button>
+				</div>
+				<div class="game-info">
+					<p>Current Player: <span id="current-player">Black</span>
+					</p>
+					<p>Black Score: <span id="black-score">2</span>
+					</p>
+					<p>White Score: <span id="white-score">2</span>
+					</p>
+					<div id="status-message"></div>
+				</div>
+			</div>
+			<div id="game-board"></div>
+		</div>
+		<script src="{{ url_for('static', filename='app.js') }}"></script>
+	</body>
+</html>

@@ -1,0 +1,135 @@
+:root {
+--border-radius-large: 1rem;
+--border-radius-medium: 0.5rem;
+--border-radius-small: 0.25rem;
+--cell-size: 2.5rem;
+--color-background: rgb(240, 240, 240);
+--color-black: rgb(40, 40, 40);
+--color-error-bg: rgb(255, 200, 200);
+--color-error-text: rgb(200, 40, 40);
+--color-primary: rgb(60, 140, 60);
+--color-secondary: rgb(100, 190, 100);
+--color-shadow: rgba(0, 0, 0, 0.2);
+--color-tertiary: rgb(130, 200, 130);
+--color-white: rgb(255, 255, 255);
+--container-max-width: 50rem;
+--game-options-min-width: 12rem;
+--piece-size: 2rem;
+--spacing-l: 1rem;
+--spacing-m: 0.75rem;
+--spacing-s: 0.5rem;
+--spacing-xl: 1.25rem;
+--spacing-xs: 0.4rem;
+--spacing-xxl: 1.5rem;
+--spacing-xxs: 0.25rem;
+--valid-move-indicator-size: 1rem;
+}
+* {
+margin: 0;
+padding: 0;
+}
+body {
+background-color: var(--color-background);
+padding: var(--spacing-xl);
+}
+.container {
+margin: 0 auto;
+max-width: var(--container-max-width);
+}
+h1 {
+color: var(--color-primary);
+margin-bottom: var(--spacing-xxl);
+text-align: center;
+}
+.controls {
+display: flex;
+justify-content: space-between;
+margin-bottom: var(--spacing-xxl);
+}
+.game-options,
+.game-info {
+background-color: var(--color-white);
+border-radius: var(--border-radius-medium);
+box-shadow: 0 var(--spacing-xxs) var(--spacing-s) var(--color-shadow);
+min-width: var(--game-options-min-width);
+padding: var(--spacing-l);
+}
+.game-options label {
+display: block;
+margin-bottom: var(--spacing-m);
+}
+.game-options select {
+margin-left: var(--spacing-s);
+padding: var(--spacing-xxs);
+}
+#new-game-btn {
+background-color: var(--color-primary);
+border: none;
+border-radius: var(--border-radius-small);
+color: var(--color-white);
+cursor: pointer;
+margin-top: var(--spacing-s);
+padding: var(--spacing-s) var(--spacing-l);
+}
+#new-game-btn:hover {
+background-color: var(--color-primary);
+}
+.game-info p {
+margin-bottom: var(--spacing-s);
+}
+#game-board {
+background-color: var(--color-primary);
+border-radius: var(--border-radius-medium);
+box-shadow: 0 var(--spacing-xxs) var(--spacing-s) var(--color-shadow);
+display: grid;
+gap: var(--spacing-xxs);
+grid-template-columns: repeat(8, 1fr);
+margin: 0 auto;
+max-width: fit-content;
+padding: var(--spacing-xs);
+}
+.cell {
+align-items: center;
+background-color: var(--color-secondary);
+border-radius: var(--border-radius-small);
+cursor: pointer;
+display: flex;
+height: var(--cell-size);
+justify-content: center;
+width: var(--cell-size);
+}
+.piece {
+border-radius: var(--border-radius-large);
+height: var(--piece-size);
+width: var(--piece-size);
+}
+.piece.black {
+background-color: var(--color-black);
+}
+.piece.white {
+background-color: var(--color-white);
+}
+.cell.valid-move {
+background-color: var(--color-tertiary);
+}
+.cell.valid-move::after {
+background-color: var(--color-shadow);
+border-radius: var(--border-radius-medium);
+content: "";
+height: var(--valid-move-indicator-size);
+width: var(--valid-move-indicator-size);
+}
+#status-message {
+border-radius: var(--border-radius-small);
+margin-top: var(--spacing-l);
+padding: var(--spacing-s);
+text-align: center;
+}
+.success {
+background-color: var(--color-tertiary);
+color: var(--color-primary);
+}
+.error {
+background-color: var(--color-error-bg);
+color: var(--color-error-text);
+}
